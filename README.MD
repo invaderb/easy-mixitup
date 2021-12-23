@@ -37,6 +37,10 @@ You can also adjust the order of the posts
 [wp-mixitup order=DESC]
 ```
 
+### WP version
+Tested on wp version 5.8.2
+Should work on 5.8+
+
 ### Issues
 
 If you have issues please open a github issue 
