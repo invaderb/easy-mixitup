@@ -1,6 +1,6 @@
 <?php
 
-function get_cat_calsses($post_id, $tax){
+function create_class($post_id, $tax){
 	$terms = wp_get_object_terms( $post_id, $tax );
 	$classes = '';
 	foreach ( $terms as $term ) :
@@ -11,9 +11,10 @@ function get_cat_calsses($post_id, $tax){
 }	
 
 function easy_mixitup_shortcode($atts) {
-    wp_enqueue_script('easy-mixitup-main', 'https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js', '','',true);
-    wp_enqueue_script('easy-mixitup-script', plugin_dir_url( __FILE__ ) . '/script.js', '','',true);
-    wp_enqueue_style('easy-mixitup-style', plugin_dir_url( __FILE__ ) . '/style.css');
+    wp_enqueue_script('easy-mixitup-main', plugin_dir_url( __FILE__ ) . 'js/mixitup.js', '','',true);
+    wp_enqueue_script('easy-mixitup-script', plugin_dir_url( __FILE__ ) . 'js/script.js', '','',true);
+    wp_enqueue_style('easy-mixitup-style', plugin_dir_url( __FILE__ ) . 'css/style.css');
+
     extract(shortcode_atts(array(
         'post_type' => 'posts',
         'order' => 'ASC',
@@ -43,8 +44,8 @@ function easy_mixitup_shortcode($atts) {
             <div>
                 <button type="button" class="filter" data-filter="all">Show All</button>
                 <?php foreach ($categories as $cat) : ?>
-                    <button type="button" data-filter=".easy-mixitup-cat-<?php echo $cat->slug; ?>">
-                        <?php echo $cat->name; ?>
+                    <button type="button" data-filter=".easy-mixitup-cat-<?php echo esc_attr($cat->slug); ?>">
+                        <?php echo esc_html($cat->name); ?>
                     </button>
                 <?php endforeach; ?>
             </div>
@@ -53,7 +54,7 @@ function easy_mixitup_shortcode($atts) {
                 <?php while ( $items->have_posts() ) : $items->the_post(); 
                     $post_id = get_the_ID();
                 ?>
-                <div class="mix easy-mixitup-item <?php echo get_cat_calsses($post_id, $tax); ?>">
+                <div class="mix easy-mixitup-item <?php echo esc_attr(create_class($post_id, $tax)); ?>">
                     <?php 
                         $thumb_id = get_post_thumbnail_id();
                         $thumb_array = wp_get_attachment_image_src($thumb_id, 'full');
@@ -63,11 +64,11 @@ function easy_mixitup_shortcode($atts) {
                         $slug = $post->post_name;
                     ?>
                     <div class="easy-mixitup-item-wrapper">
-                        <a href="<?php echo $slug ?>" >
-                        <img src="<?php echo $thumb_url;?>" />
+                        <a href="<?php echo esc_url(get_permalink(get_page_by_title($slug))); ?>" >
+                        <img src="<?php echo esc_url($thumb_url); ?>" />
                         <div class="easy-mixitup-item-label">
                             <div class="easy-mixitup-item-label-text">
-                                <span class="easy-mixitup-item-text-title"><?php the_title(); ?></span>
+                                <span class="easy-mixitup-item-text-title"><?php echo esc_html(the_title('', '', false)); ?></span>
                             </div>
                             <div class="easy-mixitup-item-label-bg"> </div>
                         </div>
