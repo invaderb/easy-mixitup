@@ -1,6 +1,6 @@
-mixitup('#wp-mixitup-list', {
+mixitup('#easy-mixitup-list', {
     selectors: {
-        target: '.wp-mixitup-item'
+        target: '.easy-mixitup-item'
     },
     animation: {
         effects: 'fade translateZ(-100px)',

@@ -1,4 +1,4 @@
-# WP-MIXITUP
+# EASY-MIXITUP
 
 wp plugin to filter, sort, and animate posts and custom post types.
 
@@ -11,7 +11,7 @@ This plugin offers a simple shortcode with optional arguments
 The curly braces can be replaced or removed entirely if you just want to use the default posts
 
 ```
-[wp-mixitup {post-type=(custom post type name)}]
+[easy-mixitup {post-type=(custom post type name)}]
 ```
 
 ## Example
@@ -19,22 +19,22 @@ The curly braces can be replaced or removed entirely if you just want to use the
 Display just posts
 
 ```
-[wp-mixitup]
+[easy-mixitup]
 ```
 
 If you have a custom post type named portfolio
 
 ```
-[wp-mixitup post-type=portfolio]
+[easy-mixitup post-type=portfolio]
 ```
 
 You can also adjust the order of the posts
 ```
-[wp-mixitup order=ASC]
+[easy-mixitup order=ASC]
 ```
 
 ```
-[wp-mixitup order=DESC]
+[easy-mixitup order=DESC]
 ```
 
 ### WP version

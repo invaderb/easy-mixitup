@@ -1,4 +1,4 @@
-=== wp-mixitup ===
+=== easy-mixitup ===
 Contributors: invaderb
 Donate link: http://example.com/
 Tags: portfolio, animated, sort, filter, 
@@ -23,7 +23,7 @@ This plugin offers a simple shortcode with optional arguments
 The curly braces can be replaced or removed entirely if you just want to use the default posts
 
 ```
-[wp-mixitup {post-type=(custom post type name)}]
+[easy-mixitup {post-type=(custom post type name)}]
 ```
 
 == Installation ==
@@ -39,22 +39,22 @@ Manual uploading
 Display just posts adn post categories
 
 ```
-[wp-mixitup]
+[easy-mixitup]
 ```
 
 If you have a custom post type named portfolio
 
 ```
-[wp-mixitup post-type=portfolio]
+[easy-mixitup post-type=portfolio]
 ```
 
 You can also adjust the order of the posts
 ```
-[wp-mixitup order=ASC]
+[easy-mixitup order=ASC]
 ```
 
 ```
-[wp-mixitup order=DESC]
+[easy-mixitup order=DESC]
 ```
 
 == WP version ==
@@ -64,10 +64,10 @@ Should work on 5.8+
 == Issues ==
 
 If you have issues please open a github issue:
-https://github.com/invaderb/wp-mixitup/issues
+https://github.com/invaderb/easy-mixitup/issues
 
 == Contributions ==
-This project is open source and free to use for non comercial projects to match mixitup licensing agreements
+This project is open source and free to use for non comercial projects to mateasy mixitup licensing agreements
 
 
 == TODO ==
