@@ -1,6 +1,6 @@
 <?php
 
-function create_class($post_id, $tax){
+function easy_mixitup_create_class($post_id, $tax){
 	$terms = wp_get_object_terms( $post_id, $tax );
 	$classes = '';
 	foreach ( $terms as $term ) :
@@ -54,7 +54,7 @@ function easy_mixitup_shortcode($atts) {
                 <?php while ( $items->have_posts() ) : $items->the_post(); 
                     $post_id = get_the_ID();
                 ?>
-                <div class="mix easy-mixitup-item <?php echo esc_attr(create_class($post_id, $tax)); ?>">
+                <div class="mix easy-mixitup-item <?php echo esc_attr(easy_mixitup_create_class($post_id, $tax)); ?>">
                     <?php 
                         $thumb_id = get_post_thumbnail_id();
                         $thumb_array = wp_get_attachment_image_src($thumb_id, 'full');
