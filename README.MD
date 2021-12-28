@@ -57,3 +57,27 @@ This project is open source and free to use for non comercial projects to match 
 - - define taxamony name
 - pagination?
 - category arguments
+
+### deployment
+
+If svn isn't set up set that up
+
+```
+cd easy-mixitup
+mkdir my-local-dir
+svn co https://plugins.svn.wordpress.org/easy-mixitup my-local-dir  
+```
+
+copy changes over
+```
+cp inc my-local-dir/trunk
+cp easy-mixitup.php my-local-dir/trunk
+cp *.txt my-local-dir/trunk
+cp ../assets/* my-local-dir/assets
+svn add .
+```
+
+commit changes
+```
+svn ci -m "{version release}" --username invaderB --password {password}
+```

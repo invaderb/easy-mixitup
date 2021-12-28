@@ -3,6 +3,7 @@ Contributors: invaderb
 Donate link: http://example.com/
 Tags: portfolio, animated, sort, filter, 
 Requires at least: 5.0.0
+Requires PHP: 7.0.0
 Tested up to: 5.8.2
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -85,12 +86,13 @@ This project is open source and free to use for non comercial projects to mateas
 will be added in the future
 
 == Screenshots ==
+1. Portfolio
 
-will be added in the future
+ == Upgrade Notice ==
+
+Nothing currently
 
 == Changelog ==
 
 = 1.0 =
 * Initial release
-
-
